@@ -10,14 +10,33 @@
 
   p.dotted {border-style: dotted;}
 
+  @media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .left, .right {
+        position: relative;
+        width: 100%;
+    }
+
+    h1 {
+        margin-left: 20px;
+        margin-right: 20px; 
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+/*I used ChatGPT as a tool to better optimize my page for a mobile device. One recommendation was to incorporate @media through CSS, which I include.*/
+
   img {
-    opacity: 0.5;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
-    width: 30%
-    %;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    Opacity: .5;
   }
 
   img.box {
@@ -29,7 +48,7 @@
   }
 
   img:hover {
-    opacity: 1.0; /*This is for the profile photo*/
+    opacity: 1.0; /*This is for both photos*/
   }
 
   div.box {
@@ -41,6 +60,33 @@
     overflow: hidden;
     z-index: -1;
   }
+
+  iframe {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+  /*I included this iframe style in order to ensure that the data visuals would still be responsive in a mobile format.*/
+
+
+  .video-container{
+    position: relative;
+    width: 100%;
+    max-width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* The video-container CSS code is in place to ensure that the video does not look too big on a horizontal/desktop screen.*/
 
   .blue-box {
     border: 1px solid blue;
@@ -55,8 +101,8 @@
     position: sticky;
     top: 0;
     padding: 5 px;
-    background-color:aqua
-    border; 2px solid #4CAF50;
+    background-color:aqua;
+    border: 2px solid #4CAF50;
   }
 
   .container { 
@@ -65,7 +111,7 @@
 
   .black-box {
     position: relative;
-    border: 2px solid black'
+    border: 2px solid black;
     height: 100px;
     margin: 30px;
     z-index: 1;
@@ -78,30 +124,23 @@
     margin: 0;
   }
 
-  h1 {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 150px;
+  h1.solid {
+    border: 2px solid black;  
+    padding: 10px;  
+    background-color: #d3d3d3;  
+    margin: 20px 0;  
+    display: inline-block;  
   }
-
-  h1.solid {border-style: solid;}
-
-  .left {
-    position: absolute;
-    left: -50px;
-    width: 300px;
-    padding: 10px;
-  }
-
-  .right {
-    position: relative;
-    right: 200px;
-  }
-  
   h2{
         margin-top: 40px;
+        color: rgb(8, 8, 122);
     }
+
+  body {
+    background-color: #d3d3d3;
+  }
+
+  /* I made the background a light grey so it would be easier on the eyes, especially for those reading in darker rooms.*/
 
 </style>
 </head>
@@ -117,13 +156,10 @@
 <p>I'm Pavan Acharya, an aspiring political reporter. Though my immediate career goals lie in print journalism, this portfolio presents a new opportunity. I always aim to challenge myself in new ways. Through this website, I'm looking to expand my horizons and show what I've learned in the past few years as it relates to data journalism. My work won't always be perfect, but I'm proud to have tried. To access my work and resume, check out my personal website!</p>
 <div style="display: flex; gap: 40px;">
     <a href="https://www.pavanacharya.com/">Personal Website</a>
-    <a href=https://www.linkedin.com/in/pavanacharya2002/>LinkedIn</a>
+    <a href="https://www.linkedin.com/in/pavanacharya2002/">LinkedIn</a>
 </div>
 
-<br>
-<br>
-<br>
-<br>
+<!--Though I did not originally include it, I added in the div directly above to ensure that content from the "Print Work" section didn't overlap with content from the "About Me" section in a horizontal or desktop setting.-->
 
 <h2 style="h2">Print Work</h2>
 
@@ -141,34 +177,59 @@
     <br>
     <ul class="nav">
     <a href="https://www.dallasnews.com/news/education/2024/09/04/if-she-knew-the-sexual-abuse-scandal-taking-center-stage-in-lorena-isd/">‘If she knew’: The sexual abuse scandal taking center stage in Lorena ISD</a>
-    <br>
+    <div style="clear: both;"></div>
+<br>
     <a href="https://www.dallasnews.com/news/politics/2024/10/07/texas-new-poll-watcher-protections-will-be-put-to-the-test-in-2024-election/">Texas’ new poll watcher protections will be put to the test in 2024 election</a>
-    <br>
+    <div style="clear: both;"></div>
+<br>
     <a href="https://www.dallasnews.com/news/crime/2024/07/24/car-theft-victims-look-to-social-media-to-help-find-their-stolen-vehicles/">Car theft victims look to social media to help find their stolen vehicles</a>
-    <br>
-    <img src="IMG_9572.jpg" alt="Pavan on the Sidewalk" style="float: right: ;; margin-right: 10px;">
-    </div></ul>
+    <div style="clear: both;"></div>
+<br>
+    <img src="IMG_9572.jpg" alt="Pavan on the Sidewalk">
+    </ul>
 
 
     <h2>Multimedia</h2>
     <p>1. Electric Charge Stations Built in Chicago Since 2010 - Flourish Map</p>
-    <div class="flourish-embed flourish-map" data-src="visualisation/19926423"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/19926423/thumbnail" width="100%" alt="map visualization" /></noscript></div>
-    <p>*In crafting this digital map, I was able to learn how to incorporate data from the Chicago Data Portal, sift through that data on Google Sheets and then apply it to a map setting on Flourish.</p>
+    <div alt="A map of Chicago showing all electric charge stations built in the city since 2010" class="flourish-embed flourish-map" data-src="visualisation/19926423"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/19926423/thumbnail" width="100" alt="map visualization" /></noscript></div>
+    <p> - In crafting this digital map, I was able to learn how to incorporate data from the Chicago Data Portal, sift through that data on Google Sheets and then apply it to a map setting on Flourish.</p>
+    <p>- In the case that this visualization is unavailable, click on <a href="https://docs.google.com/document/d/1k5mQOVUVvyUjfgAc_hA-M57JvctMqrhqLU57bOCHEIU/edit?tab=t.0">this link</a> in order to see a static backup.</p>
     <br>
     <p>2. Video: Students find community through residential colleges</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/HDZ7w60PcXw?si=AuEf4lfumDgCXiSH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>*This was the first video story I ever completed. I worked diligently to learn and use Adobe Premiere Pro all at the same time, ensuring that all specs related to audio and visuals were consistent with Newsroom style.</p>
+    <div class="video-container">
+    <iframe alt="A video story about two minutes long representing the community students at Northwestern University find through their experiences at residential colleges." width="560" height="315" src="https://www.youtube.com/embed/HDZ7w60PcXw?si=AuEf4lfumDgCXiSH" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!--The video-container has been implemented because the video looks otherwise unwatchable if it takes up the entire screen in a desktop or horizontal format.-->
+    <p> - This was the first video story I ever completed. I worked diligently with a fellow reporter, Jack Austin, to learn and use Adobe Premiere Pro all at the same time, ensuring that all specs related to audio and visuals were consistent with Newsroom style.</p>
     <br>
-    <p>3.</p>
-    <iframe id="datawrapper-chart-Mweya" style="width: 0px; border: none; min-width: 100% !important; height: 654px;" title="Average employment rate by time from TAP completion to separation " src="https://datawrapper.dwcdn.net/Mweya/3/" height="590" frameborder="0" scrolling="no" aria-label="Interactive line chart" data-external="1"></iframe>
-    <p>*</p>
+    <p>3. Average Employment Rate By Time From TAP Completion To Separation - DataWrapper</p>
+    <iframe alt="A line graph demonstrating that active duty service members who begin a government-mandated transition program earlier than other members are more likely to find employment after leaving the military." id="datawrapper-chart-Mweya" style="width: 0px; border: none; min-width: 100% !important; height: 654px;" title="Average employment rate by time from TAP completion to separation " src="https://datawrapper.dwcdn.net/Mweya/3/" height="590" aria-label="Interactive line chart" data-external="1"></iframe>
+    <p> - This graphic represents how the employment rate for new veterans differs depending on when those veterans chose to partake in a mandatory transition program prior to leaving the military. Those planning to leave the military who started the program sooner than their peers were more likely to be employed sooner after they left the military. This graphic relied on basic data provided by the National Directory of New Hires. Were I to go back, I would have more clearly labelled the horizontal access as "Time since departure from military" to clarify any confusion for viewers.</p>
+    <p>- In the case that this visualization is unavailable, click on <a href="https://docs.google.com/document/d/1k5mQOVUVvyUjfgAc_hA-M57JvctMqrhqLU57bOCHEIU/edit?tab=t.0">this link</a> in order to see a static backup.</p>
     <br>
-    <p>4.</p>
-    TKTKKT
-    <p>*</p>
+    <p>4. TAP Start Date For Active Duty Service Members Before They Leave The Military - DataWrapper</p>
+    <iframe alt="A bar graph representing that a bulk of active duty service members begin a government-mandated transition program just months before they leave the military." id="datawrapper-chart-8tPdm" style="width: 0px; border: none; min-width: 100% !important; height: 464px;" title="TAP start date before leaving the military" src="https://datawrapper.dwcdn.net/8tPdm/4/" height="452" aria-label="Column Chart" data-external="1"></iframe>
+    <p> - This graphic was a part of the <a href="https://medillonthehill.medill.northwestern.edu/2023/12/service-members-advocates-call-for-overhaul-of-way-to-help-military-personnel-move-into-civilian-jobs/">same story</a> as the above visualization. This visualization, pulled from data from the Government Accountability Office, depicts how many months prior to departing the military that active service members started a mandatory transition program. As evidenced by the data, almost 40% started the program less than six months before leaving the military. Additionally, though service members are required to start the program more than a year before departing the military, just about a quarter do so.</p>
+    <p>- In the case that this visualization is unavailable, click on <a href="https://docs.google.com/document/d/1k5mQOVUVvyUjfgAc_hA-M57JvctMqrhqLU57bOCHEIU/edit?tab=t.0">this link</a> in order to see a static backup.</p>
     <br>
 
-  
+    <h2>Methodologies</h2>
+    <!--I chose to center the Methodologies for each visualization in order to create a more appealing visual for those scrolling through in a desktop or horizontal format. The visualizations above naturally took up most of the screen regardless, but I wanted to draw users to the center of the screen for this final section.-->
+    <p>Electric Charge Stations Built in Chicago Since 2010 (Flourish) Data Breakdown</p>
+    <ul class="nav">
+      <p>1. Copied data from the <a href="https://data.cityofchicago.org/Environment-Sustainable-Development/Alternative-Fuel-Locations/f7f2-ggz5/about_data">Chicago Data Portal</a> Highlighting Alternative Fuel Locations in the South Wisconsin, Chicago and West Indiana area.</p>
+      <p>2. Through google sheets, created a <a href="https://docs.google.com/spreadsheets/d/1TmV2QTrfVrqTcUXhUEfnrptnBuNKaj8nY-oELTRQkJ0/edit?gid=0#gid=0">new spreadsheet</a> with just electric vehicle fuel types.</p>
+      <p>3. Copied multiple data points (e.g. fuel type, latitude/lnogitute, EV Network) into a Flourish map focused just on the Chicago area.</p>
+      </ul>
+      <p>Average Employment rate by time from TAP completion to separation (DataWrapper) Data Breakdown</p>
+      <ul class="nav">
+        <p>1. Data came from a <a href="https://www.dol.gov/sites/dolgov/files/OASP/evaluation/pdf/TAP/TAP%20Impact%20Study%20Report_508.pdf">report</a> about the Transition Assistance Program (TAP) submitted to the Department of Labor.</p>
+        <p>2. The data was pulled directly from page "xix" and translated into a line chart.</p>
+      </ul>
+      <p>TAP Start Date For Active Duty Service Members Before They Leave The Military (DataWrapper) Data Breakdown</p>
+      <ul class="nav">
+        <p>1. Data was pulled from a graphic located in a <a href="https://www.gao.gov/products/gao-23-104538#:~:text=Over%2090%20percent%20of%20transitioning,vocational%20training%2C%20and%20entrepreneurship%20increased.">study</a> from the Government Accountability Office.</p>
+        <p>2. I took data points from the study and translated them into the bar graphic form seen in the final product.</p>
   </body>
 </html>
 
